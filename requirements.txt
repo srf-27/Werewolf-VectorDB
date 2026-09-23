@@ -1,0 +1,4 @@
+chromadb==1.5.9
+python-dotenv==1.2.3
+sentence_transformers==6.1.0
+tqdm==4.70.1
