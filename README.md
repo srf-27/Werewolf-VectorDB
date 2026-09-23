@@ -8,7 +8,7 @@ RAG 检索、对局复盘、AI 复盘助手、策略分析等。
 ## 数据来源
 
 - 参考仓库：[boluoweifenda/werewolf](https://github.com/boluoweifenda/werewolf)
-- 数据集下载：[download dataset](https://drive.google.com/file/d/1pw6uIPdjfxssEPELA-U6neejmZ2sIrpe/view?usp=sharing)（原仓库链接；也可直接使用本仓库 `./data/origin_data` 下的数据）
+- 数据集下载：[download dataset](https://drive.google.com/file/d/1pw6uIPdjfxssEPELA-U6neejmZ2sIrpe/view?usp=sharing)（原仓库链接）
 
 ## 数据集信息
 
