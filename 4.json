@@ -1,0 +1,202 @@
+{
+  "task": [
+    {
+      "phase": "Day 1, Daytime",
+      "events": [
+        "[5] is speaking",
+        "[6] is speaking",
+        "Popup: Werewolves self-destruct"
+      ]
+    },
+    {
+      "phase": "Day 2, Night",
+      "events": [
+        "Werewolves, Seer are taking action",
+        "Witch is taking action",
+        "Actions end, waiting for dawn"
+      ]
+    },
+    {
+      "phase": "Day 2, Daytime",
+      "events": [
+        "Daybreak has come",
+        "Popup: Death status",
+        "[4] is preparing to speak",
+        "[4] is speaking",
+        "Popup: Werewolves self-destruct"
+      ]
+    },
+    {
+      "phase": "Day 3, Night",
+      "events": [
+        "Werewolves, Seer are taking action",
+        "Witch is taking action",
+        "Actions end, waiting for dawn"
+      ]
+    },
+    {
+      "phase": "Day 3, Daytime",
+      "events": [
+        "Daybreak has come",
+        "Popup: Death status",
+        "[3] is preparing to speak",
+        "[3] is speaking",
+        "[9] is speaking",
+        "[8] is speaking",
+        "[7] is speaking",
+        "Start voting",
+        "Popup: Death status",
+        "[8] is preparing to give the last words",
+        "[8] gives the last words"
+      ]
+    },
+    {
+      "phase": "Day 4, Night",
+      "events": [
+        "Werewolves, Seer are taking action",
+        "Witch is taking action",
+        "Actions end, waiting for dawn"
+      ]
+    },
+    {
+      "phase": "Day 4, Daytime",
+      "events": [
+        "Daybreak has come",
+        "Popup: Death status"
+      ]
+    },
+    {
+      "phase": "Game preparation",
+      "events": [
+        "Do not leave, the game is about to start"
+      ]
+    }
+  ],
+  "game_state": {
+    "roles": {
+      "1": "Villager",
+      "2": "Werewolf",
+      "3": "Villager",
+      "4": "Werewolf",
+      "5": "Seer",
+      "6": "Witch",
+      "7": "Werewolf",
+      "8": "Villager",
+      "9": "Hunter"
+    },
+    "final": {
+      "1": "poisoned",
+      "2": "suicide",
+      "3": "killed",
+      "4": "suicide",
+      "5": "killed",
+      "6": "killed",
+      "7": "in_game",
+      "8": "exiled",
+      "9": "in_game"
+    },
+    "Day 1 Night": {
+      "Seer": 6,
+      "Werewolf": 8,
+      "Witch antidote": 8,
+      "Death Message": []
+    },
+    "Day 1 Daytime": {
+      "suicide": 2
+    },
+    "Day 2 Night": {
+      "Seer": 9,
+      "Werewolf": 5,
+      "Witch poison": 1,
+      "Death Message": [
+        1,
+        5
+      ]
+    },
+    "Day 2 Daytime": {
+      "suicide": 4
+    },
+    "Day 3 Night": {
+      "Werewolf": 6,
+      "Death Message": [
+        6
+      ]
+    },
+    "Day 3 Daytime": {
+      "Voting Pattern": {
+        "3": -1,
+        "7": 8,
+        "8": -1,
+        "9": 8
+      },
+      "Voting Result": 8
+    },
+    "Day 4 Night": {
+      "Werewolf": 3,
+      "Death Message": [
+        3
+      ]
+    },
+    "Day 4 Daytime": {},
+    "Game Result": "Werewolves Win",
+    "Automatically Passed for Not Speaking": []
+  },
+  "audio": {
+    "Day 1 Daytime - [5] is speaking": {
+      "duration": 26.1,
+      "rms": 4.2e-05,
+      "text": "",
+      "summary": "",
+      "format": ""
+    },
+    "Day 1 Daytime - [6] is speaking": {
+      "duration": 5.0,
+      "rms": 0.0,
+      "text": "嗯。",
+      "summary": "嗯，",
+      "format": "{\n    \"身份类型\":{\"无结果\": []}, \n    \"动作类型\":{\"无结果\": []}\n}"
+    },
+    "Day 2 Daytime - [4] is speaking": {
+      "duration": 21.2,
+      "rms": 0.0,
+      "text": "嗯。",
+      "summary": "嗯，",
+      "format": "{\n    \"身份类型\":{\"无结果\": []}, \n    \"动作类型\":{\"无结果\": []}\n}"
+    },
+    "Day 3 Daytime - [3] is speaking": {
+      "duration": 53.5,
+      "rms": 0.0,
+      "text": "",
+      "summary": "",
+      "format": ""
+    },
+    "Day 3 Daytime - [9] is speaking": {
+      "duration": 86.5,
+      "rms": 0.123133,
+      "text": "嗯，七八，你去聊一下吧，你觉得三像吗？算了，七号八号你们去聊一下吧啊，过了就七号八号里面点吧，或者说七八，你们觉得三是的话，你们俩就去点那个三，嗯，你们要觉得这个三不是，那你俩就就是你你们点，你自己觉得像狼的人啊，我随便点不对啊，不能弄平票啊。嗯，我没有听到他们两个发言，我怎么去带那个队呀？我带不了那个队呀，好烦啊，你要么你狼人出来一个跳枪的嘛，嗯更快一点，我是不是该我我该拍还是不该拍呀？我是枪啊，你七八里面聊。",
+      "summary": "七八号去聊三是不是狼，点票时不能弄平票。我带不了队，狼人出来一个跳枪的更快。",
+      "format": "{\n    \"身份类型\":{\"狼人\":[unknown]}, \n    \"动作类型\":{\"无结果\": []}\n}"
+    },
+    "Day 3 Daytime - [8] is speaking": {
+      "duration": 23.0,
+      "rms": 0.060176,
+      "text": "你是枪，你就幸福三选一嘛，你说七八句聊什么，我真的不知道我该聊什么，没有什么信息。狼人牌一个接一个自爆，我我能跟你聊出来什么逻辑吗？你是我，你能聊出来什么逻辑吗？你随便你随便点。",
+      "summary": "你是枪，你就幸福三选一嘛，你说七八句聊什么，我真的不知道我该聊什么，没有什么信息，狼人牌一个接一个自爆，我我能跟你聊出来什么逻辑吗？你是我，你能聊出来什么逻辑吗？你随便你随便点，",
+      "format": "{\n    \"身份类型\":{}, \n    \"动作类型\":{}\n}"
+    },
+    "Day 3 Daytime - [7] is speaking": {
+      "duration": 32.1,
+      "rms": 0.056806,
+      "text": "别随便点啊，点这个八呀，你想一下二号他跳个假礼物出来，给这个六号刀补的情况下，七八九后置位肯定有他的狼队友啊。因为如果二三是三连狼的情况下，这个二号不可能跳个女巫啊。因为先发言的是这个一号的，所以这个三号是冷放的一张牌啊，点这个八吧，点这个八游戏就结束了开。",
+      "summary": "别随便点啊，点这个八呀，你想一下二号他跳个假礼物出来，给这个六号刀补的情况下，七八九后置位肯定有他的狼队友啊，因为如果二三是三连狼的情况下，这个二号不可能跳个女巫啊，因为先发言的是这个一号的，所以这个三号是冷放的一张牌啊，点这个八吧，点这个八游戏就结束了开，",
+      "format": "{\n    \"身份类型\":{\"狼人\":[2,3]}, \n    \"动作类型\":{\"无结果\": []}\n}"
+    },
+    "Day 3 Daytime - [8] gives the last words": {
+      "duration": 2.4,
+      "rms": 0.003746,
+      "text": "",
+      "summary": "",
+      "format": ""
+    }
+  }
+}
