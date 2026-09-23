@@ -3,6 +3,8 @@
 #   批量入库：  python build_db.py --input_dir ./data/washed_data --reset
 #   单文件入库：python build_db.py --input 1.json
 #   本地库调试：python build_db.py --input_dir ./data --local_path ./.chroma_local --reset
+#   限制数量：  python build_db.py --input_dir ./data/washed_data --limit 50 --reset
+#   随机抽样：  python build_db.py --input_dir ./data/washed_data --limit 50 --random --seed 42 --reset
 #
 # 三层结构：game -> phase -> {utterance, skill_action}
 # 固定 9 人 3狼3民预女猎板子，技能集合写死：
@@ -11,6 +13,7 @@
 import argparse
 import json
 import os
+import random
 import re
 import time
 import traceback
@@ -651,6 +654,20 @@ def collect_input_files(args):
             unique.append(p)
     if not unique:
         raise SystemExit("没找到任何 .json 文件")
+
+    # 随机打乱顺序（可选，配合 --seed 可复现）
+    if getattr(args, "random", False):
+        seed = getattr(args, "seed", None)
+        rng = random.Random(seed)
+        rng.shuffle(unique)
+        print(f"  随机打乱文件顺序" + (f"（seed={seed}）" if seed is not None else ""))
+
+    # 只取前 N 个文件（N <= 0 表示不限制）
+    limit = getattr(args, "limit", None)
+    if limit is not None and limit > 0 and len(unique) > limit:
+        print(f"  --limit {limit}：共 {len(unique)} 个 json，仅处理前 {limit} 个")
+        unique = unique[:limit]
+
     return unique
 
 
@@ -660,6 +677,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_dir", default=None)
     parser.add_argument("--input", default=None)
+    parser.add_argument("--limit", type=int, default=None,
+                        help="最多处理 N 个 json 文件（默认按文件名排序取前 N），<=0 或不传表示不限制")
+    parser.add_argument("--random", action="store_true",
+                        help="随机选取文件（配合 --limit 使用），默认按文件名排序")
+    parser.add_argument("--seed", type=int, default=None,
+                        help="随机种子，填了则每次抽到的文件一致（可复现）")
     parser.add_argument("--local_path", default=None, help="用本地 Chroma 而不是云端")
     parser.add_argument("--reset", action="store_true", help="删除并重建所有 collection")
     parser.add_argument("--no_demo", action="store_true", help="跳过召回演示")

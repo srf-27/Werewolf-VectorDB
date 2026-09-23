@@ -78,6 +78,12 @@ python scripts/build_db.py --input_dir ./data/washed_data --reset
 # 单文件入库
 python scripts/build_db.py --input xxx.json
 
+# 限制入库的 json 数量（默认按文件名排序取前 N 个，调试用）
+python scripts/build_db.py --input_dir ./data/washed_data --limit 50 --reset
+
+# 随机抽 N 个（--seed 可复现，不填则每次不同）
+python scripts/build_db.py --input_dir ./data/washed_data --limit 50 --random --seed 42 --reset
+
 # 本地库调试
 python scripts/build_db.py --input_dir ./data --local_path ./.chroma_local --reset
 ```
